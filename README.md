@@ -29,7 +29,7 @@ The dataset contains **1,133 transactions** from March to July 2024, with the fo
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - **Python**: Data manipulation and analysis
 - **Pandas**: Grouping, pivoting, aggregation
@@ -107,12 +107,7 @@ plt.show()
 ### Result
 ![Visualisation for weekly sales](images/weekly_coffee_sales.png)
 
-### 4. **Daily Product-Level Sales**
-- Pivoted daily counts of each coffee type
-- Summary stats showed **Americano with Milk** had the highest single-day sales (12 units)
-- All products had days with zero sales—useful for restocking and promotions
-
-### 5. **Hourly Sales Distribution**
+### 4. **Hourly Sales Distribution**
 - Grouped by `hour`, counted transactions
 - Bar chart revealed **10 AM** as the peak hour (133 transactions)
 - Secondary peaks at **12 PM** and **7 PM**
@@ -120,13 +115,21 @@ plt.show()
 ### Result
 ![Visualisation for hourly sales](images/hourly_coffee_sales.png)
 
-### 6. **Hourly Sales by Coffee Type**
+### 5. **Hourly Sales by Coffee Type**
 - Pivoted hourly counts for each product
 - Created 8-panel subplot showing time-of-day demand per coffee type
 - Insights:
   - **Latte** and **Americano with Milk** peak at 10 AM and 7 PM
   - **Espresso** spikes mid-morning
   - **Cocoa** and **Hot Chocolate** trend in the evening
+
+### 6. **Daily Product-Level Sales**
+- Pivoted daily counts of each coffee type
+- Summary stats showed **Americano with Milk** had the highest single-day sales (12 units)
+- All products had days with zero sales—useful for restocking and promotions
+
+### Result
+![Visualisation for daily product-level sales sales](images/individualy_hourly_sales.png)
 
 ### 7. **Customer Purchase Analysis**
 - Used anonymized `card` IDs to group purchases
@@ -141,8 +144,7 @@ plt.show()
 - Grouped by `date`, summed `money`
 - Line chart revealed daily revenue fluctuations
 - Useful for identifying high-performing days and seasonal patterns
-
-
+![Visualisation for daily revenue trend](images/daily_revenue_trend.png)
 
 ##  Insights Summary
 

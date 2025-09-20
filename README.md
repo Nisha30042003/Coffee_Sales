@@ -144,7 +144,7 @@ plt.show()
 - Grouped by `date`, summed `money`
 - Line chart revealed daily revenue fluctuations
 - Useful for identifying high-performing days and seasonal patterns
-![Visualisation for daily revenue trend](images/daily_revenue_trend.png)
+![Visualisation for daily revenue trend](images/Daily_revenue_trend.png)
 
 ##  Insights Summary
 

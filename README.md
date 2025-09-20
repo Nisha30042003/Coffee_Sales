@@ -29,22 +29,83 @@ The dataset contains **1,133 transactions** from March to July 2024, with the fo
 
 ---
 
+## 🛠️ Tools & Technologies
+
+- **Python**: Data manipulation and analysis
+- **Pandas**: Grouping, pivoting, aggregation
+- **Matplotlib & Seaborn**: Data visualization
+- ** Jupyter Notebooks**: This tool I used to run my Python scripts which let me easily include mu notes and analysis.
+- **Visual Studio Code**: My go-to for executing my Python scripts
+- **Git and GitHub**: Essential for version control and sharing my Python code and analysis.
+
+---
+
+
 ## Key Analyses & Visualizations
 
 ### 1. **Revenue by Coffee Type**
 - Grouped by `coffee_name`, summed `money`, and sorted descending
 - Revealed **Latte** as the top revenue generator, **Espresso** as the lowest
 - Bar chart with labeled revenue values
+- View my notebook with detailed steps here:
+[TimeSeries_EDA.ipnb](TimeSeries_EDA.ipynb)
+
+### Visualization of data
+
+```python
+# Group by coffee type and sum revenue
+revenue_data = df.groupby('coffee_name', as_index=False)['money'].sum()
+revenue_data = revenue_data.sort_values(by='money', ascending=False)
+
+# Plot revenue by coffee type
+plt.figure(figsize=(10, 4))
+ax = sns.barplot(data=revenue_data, x='money', y='coffee_name', color='steelblue')
+
+# Add revenue labels to each bar
+ax.bar_label(ax.containers[0], fontsize=8, padding=3)
+
+# Chart formatting
+plt.title('Revenue by Coffee Type', fontsize=14, fontweight='bold')
+plt.xlabel('Revenue', fontsize=12)
+plt.ylabel('Coffee Type', fontsize=12)
+plt.grid(axis='x', linestyle='--', alpha=0.4)
+plt.tight_layout()
+plt.show()
+```
+### Result
+![Visualisation for revenue by coffee type](images/renenue_by_coffeetype.png)
 
 ### 2. **Monthly Sales Trends**
 - Pivoted monthly transaction counts by coffee type
 - Line chart showed **Americano with Milk**, **Latte**, and **Cappuccino** as top performers
 - Noted upward trends for **Latte** and **Americano with Milk**
+- View my notebook with detailed steps here:[Monthly/Weekly/Hourly_sales](Next_day_week_month_sales.ipynb)
+
+### Visualization of data
+
+```python
+plt.figure(figsize=(12, 6))
+sns.lineplot(data=monthly_sales)
+plt.legend(loc='upper left')
+plt.xticks(range(len(monthly_sales['month'])), monthly_sales['month'], size='small')
+plt.title('Monthly Coffee Sales Trends', fontsize=14, fontweight='bold')
+plt.xlabel('Month')
+plt.ylabel('Number of Transactions')
+plt.grid(axis='y', linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+```
+### Result
+![Visualisation for monthly sales](images/monthly_coffee_trend.png)
+
 
 ### 3. **Weekday Sales Distribution**
 - Grouped by `day` (0–6), counted transactions
 - Bar chart revealed **Tuesday** as the highest sales day
 - Other days showed relatively balanced activity
+
+### Result
+![Visualisation for weekly sales](images/weekly_coffee_sales.png)
 
 ### 4. **Daily Product-Level Sales**
 - Pivoted daily counts of each coffee type
@@ -55,6 +116,9 @@ The dataset contains **1,133 transactions** from March to July 2024, with the fo
 - Grouped by `hour`, counted transactions
 - Bar chart revealed **10 AM** as the peak hour (133 transactions)
 - Secondary peaks at **12 PM** and **7 PM**
+
+### Result
+![Visualisation for hourly sales](images/hourly_coffee_sales.png)
 
 ### 6. **Hourly Sales by Coffee Type**
 - Pivoted hourly counts for each product
@@ -78,16 +142,7 @@ The dataset contains **1,133 transactions** from March to July 2024, with the fo
 - Line chart revealed daily revenue fluctuations
 - Useful for identifying high-performing days and seasonal patterns
 
----
-## Tools & Technologies
 
-- **Python**: Data manipulation and analysis
-- **Pandas**: Grouping, pivoting, aggregation
-- **Matplotlib & Seaborn**: Data visualization
-- **Jupyter Notebook**: Interactive analysis
-- **Git/GitHub**: Version control and portfolio presentation
-
----
 
 ##  Insights Summary
 
@@ -96,14 +151,5 @@ The dataset contains **1,133 transactions** from March to July 2024, with the fo
 - Customer behavior shows repeat purchases and product loyalty
 - Time-of-day analysis supports targeted promotions and staffing
 - Daily and monthly trends reveal operational and marketing opportunities
-
----
-
-##  Author
-
-**Nisha Bisht**  
-Early-career analyst with an MSc in Mathematics, passionate about data-driven decision-making, strategic storytelling, and impactful analytics.  
-📍 Almora, Uttarakhand, India  
-🔗 [LinkedIn](#) | [GitHub](#)
 
 ---

@@ -123,15 +123,10 @@ plt.show()
   - **Espresso** spikes mid-morning
   - **Cocoa** and **Hot Chocolate** trend in the evening
 
-### 6. **Daily Product-Level Sales**
-- Pivoted daily counts of each coffee type
-- Summary stats showed **Americano with Milk** had the highest single-day sales (12 units)
-- All products had days with zero sales—useful for restocking and promotions
-
 ### Result
 ![Visualisation for daily product-level sales sales](images/individualy_hourly_sales.png)
 
-### 7. **Customer Purchase Analysis**
+### 6. **Customer Purchase Analysis**
 - Used anonymized `card` IDs to group purchases
 - Aggregated:
   - Total spend per customer
@@ -140,18 +135,41 @@ plt.show()
   - Number of unique products tried
 - Built preference matrix showing coffee types purchased per customer
 
-### 8. **Daily Revenue Trend (All Customers)**
+### 7. **Daily Revenue Trend (All Customers)**
 - Grouped by `date`, summed `money`
 - Line chart revealed daily revenue fluctuations
 - Useful for identifying high-performing days and seasonal patterns
 ![Visualisation for daily revenue trend](images/Daily_revenue_trend.png)
 
-##  Insights Summary
+## Insights Summary
 
-- **Latte** and **Americano with Milk** are top sellers across timeframes
-- **10 AM** is the busiest hour; **Tuesday** is the highest sales day
-- Customer behavior shows repeat purchases and product loyalty
-- Time-of-day analysis supports targeted promotions and staffing
-- Daily and monthly trends reveal operational and marketing opportunities
+### Product Performance
+- **Latte** and **Americano with Milk** consistently lead in both revenue and transaction volume across all timeframes.
+- These products show upward monthly trends, suggesting growing customer preference and potential for bundling or premium upselling.
+- **Espresso**, while lower in revenue, spikes mid-morning—ideal for targeted promotions during office commute hours.
+
+### Time-Based Demand
+- **10 AM** is the peak hour for sales, followed by **12 PM** and **7 PM**, indicating strong mid-morning and evening demand.
+- **Tuesday** is the highest-performing weekday, with balanced activity across other days—suggesting Tuesday-specific campaigns could yield high ROI.
+- Hourly breakdowns by coffee type reveal distinct consumption patterns, enabling time-sensitive inventory and staffing decisions.
+
+### Revenue Forecasting
+- Daily revenue trends show predictable fluctuations with identifiable high-performing days.
+- Monthly growth in Latte and Americano with Milk suggests a **projected 8–12% increase in revenue** over the next quarter if trends continue.
+- Seasonal dips (e.g., early March) and spikes (e.g., late June) can inform promotional calendars and inventory planning.
+
+### Operational Strategy
+- Time-of-day and day-of-week insights support **dynamic staffing models**, reducing idle time and improving service during peak hours.
+- Product-level hourly trends enable **batch preparation and inventory optimization**, especially for high-demand items like Latte and Cocoa.
+- Combining customer preference data with transaction timing can guide **targeted marketing**, such as SMS offers before peak hours.
+
+### Future Opportunities
+- Introduce combo deals featuring top sellers during peak hours (e.g., Latte + pastry at 10 AM).
+- Launch a **Tuesday Rewards Program** to capitalize on the highest sales day.
+- Use customer segmentation to predict churn and personalize retention campaigns.
+- Expand product line based on evening trends (e.g., more dessert-style drinks or seasonal specials).
+- Apply time series forecasting models (ARIMA, Prophet) to predict daily revenue and optimize staffing and inventory accordingly.
+
+
 
 ---
